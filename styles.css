@@ -1,0 +1,31 @@
+main {
+  width: 50%;
+  height: 500px;
+  margin: 20px auto;
+}
+main div {
+  width: 100%;
+}
+
+main {
+  border: 2px solid red;
+  background-color: black;
+}
+
+* {
+  color: white;
+  font-size: 7px;
+  font-weight: 100;
+  font-family: sans-serif;
+}
+
+button {
+  background-color: #7a7a7a;
+  border-radius: 50%;
+  outline: 0;
+  box-shadow: none;
+  width: 20px;
+  height: 20px;
+  outline: none;
+  margin: 2px;
+}
