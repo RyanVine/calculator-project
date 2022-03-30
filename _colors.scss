@@ -1,4 +1,13 @@
 main {
   border: 2px solid red;
-  background-color: black;
+}
+
+body {
+  background-color: white;
+  
+  .grid-area {
+    background: black;
+    color: rgb(255, 255, 255);
+  }
+
 }
