@@ -14,14 +14,29 @@ const decimal = document.querySelector(".calculator__button-decimal");
 const equals = document.querySelector("#equals");
 
 //More specific variables
+family = ["Cheyenne", "Ryan", "Cheeseburger the Argeninian Tegu"]
+console.log(family[0])
+
+
+// map
+const operatorsSpecific = {
+  '+': (a, b) => a + b,
+  '-': (a, b) => a - b,
+  'X': (a, b) => a * b,
+  '÷': (a, b) => a / b,
+  '%': (a, b) => a / b
+};
+
+let storedNumber = "";
+let storedOperator = "";
 
 
 //Functions
 
-const numberClick = (num) => {
-  console.log(num)
+// const numberClick = (num) => {
+//   console.log(num)
 
-}
+// }
 
 clear.addEventListener("click", () => {
   display.innerHTML = "";
@@ -30,15 +45,11 @@ clear.addEventListener("click", () => {
 // create a variable for each button loop - eventlisten - onclick
 //print buttons to console 
 
-let storedNumber = "";
-
-
 numbers.forEach(number => {
   number.addEventListener("click", () => {
     console.log(number);
     if (display.innerHTML === '0') {
       display.innerHTML = number.innerHTML
-      storedNumber += number.innerHTML
     } else {
       display.innerHTML += number.innerHTML;
     }
@@ -58,17 +69,31 @@ operators.forEach(operator => {
  operator.addEventListener("click", () => {
   console.log(operator.innerHTML);
   if (display.innerHTML != '0') {
-    storedNumber  += operator.innerHTML
+    storedOperator = operator.innerHTML; 
+    storedNumber = display.innerHTML;
     console.log(storedNumber)
-  } else {
-    number.innerHTML = "ERROR";
   }
   display.innerHTML = "";
 })
 })
 
-storedValue * display.innerHTML
 
+
+equals.addEventListener("click", () => {
+  console.log(equals);
+  // storedNumber = Math.storedNumber;
+  // display.innerHTML = Math.display.innerHTML;
+  console.log(parseInt(storedNumber), storedOperator, parseInt(display.innerHTML))
+  const operatorFunction = operatorsSpecific[storedOperator];
+  const total = operatorFunction(parseInt(storedNumber), parseInt(display.innerHTML));
+  display.innerHTML = total;
+}
+)
+
+// storedValue * display.innerHTML
+
+
+//Parse string into intiger
 
 
 
