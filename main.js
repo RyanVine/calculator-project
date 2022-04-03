@@ -36,15 +36,25 @@ clear.addEventListener("click", () => {
   display.innerHTML = "";
 })
 
+
+//Experimented with string manipulation here (not working)
 percent.addEventListener("click", () => {
     console.log(percent.innerHTML);
-    if (display.innerHTML == "%") {
-      display.innerHTML = display.innerHTML;
+    if (display.innerHTML.includes ("%")) {
+      display.innerHTML = display.innerHTML.slice(display.length, display.length - 1);
         } else {
       display.innerHTML = display.innerHTML + "%";
     }
   })
-
+//I was able to get this working though
+plusMinus.addEventListener("click", () => {
+  console.log("-");
+  if (display.innerHTML.includes("-")) {
+    display.innerHTML = display.innerHTML.substring(1, display.length);
+     } else {
+    display.innerHTML = "-" + display.innerHTML;
+    }
+})
 //forEach allows me to call the numbers without making a function for each button
 numbers.forEach(number => {
   number.addEventListener("click", () => {
@@ -56,7 +66,7 @@ numbers.forEach(number => {
     }
   })
 })
-//
+
 operators.forEach(operator => {
  operator.addEventListener("click", () => {
   console.log(operator.innerHTML);
