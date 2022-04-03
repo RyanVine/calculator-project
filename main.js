@@ -93,3 +93,13 @@ equals.addEventListener("click", () => {
   display.innerHTML = total;
 }
 )
+
+
+/* Found Errors:
+. Percentage doesn't remover when pressed a second time, and doesnt function as a percentage
+. Error with some calculations, such as 1.5 + 0.53
+. Display does not change size when number exceeds display length
+
+
+
+*/
